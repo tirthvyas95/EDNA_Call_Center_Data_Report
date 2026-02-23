@@ -275,9 +275,18 @@ CALCULATE(
     )
 )
 ```
-Now lets incorporate them into Visuals!
+Now lets incorporate these measures into Visuals!
 ## Visuals
-
+### Home Page
+- This Includes the Main Filters which also propogate to all other pages along with the option to go to additional filter with a button for reseting them as well.
+- On the left side there are buttons with icon pertaining to visual in other pages, you can use them to go to navigate
+- To switch to other pages you must come back to home screen and then navigate to them, or else you can just use the page navigator on the bottom
+![Main Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/fd813300623302d88e89147f0d3279e9bd198f85/Screenshots/Main%20Page.png)
+### Overview Page
+- This page gives a eagle eye view of the operations of the Call Center, stakeholders can navigate to it quickly get an idea as to how things are progressing
+![Oerview Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/fd813300623302d88e89147f0d3279e9bd198f85/Screenshots/Overview%20Page.png)
+### Employees Page
+- This page contains
 
 
 
