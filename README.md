@@ -7,7 +7,7 @@ Our goal here is to act as a report developer where it is our job as an analyst 
 ## Dataset
 Here we have a Dataset with Call records of our call center where we have information on the timestamp, duration and call records. Here is the deep dive of the data and the tables that we have
 
-Call Center Data Table(Fact Table):
+### Call Center Data Table(Fact Table):
 As you can see in the Dataset folder of this repository the data is broken in 4 years from the beginning 2018 to the end 2021, so first we will use the append query function to combine these 4 tables as they have the same column structure and the same type of data.
 
 1. CallTimestamp = Time stamp when the call was recieved
@@ -23,6 +23,7 @@ SLA Compliance = IF(
     'Call Center Data'[WaitTime] <35, "Within SLA", "Outside SLA"
 )
 ```
+![Call Center Data Table View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Call%20Center%20Data%20Table%20View.png)
 
 CallCharges Table(Dimension Table):
 1. Call Type Key = Unique number for each call type
@@ -31,12 +32,14 @@ CallCharges Table(Dimension Table):
 4. Call Charges 2019 = Call charges for each type for the year of 2019
 5. Call Charges 2020 = Call charges for each type for the year of 2020
 6. Call Charges 2021 = Call charges for each type for the year of 2021
+![Call Charges Table View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Call%20Charges%20Table%20View.png)
 
 Emoloyees Table(Dimension Table):
 1. EmployeeID = Unique Identifier of each employee
 2. EmoloyeeName = Name of the Employee
 3. Site = Site at which the Employee works
 4. ManagerName = Name of the Manager
+![Employee Table View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Employees%20Table%20View.png)
 
 Date Table(Date Dimension):
 1. Date = Derived from Min Date and Max Date
@@ -57,6 +60,7 @@ Date Table(Date Dimension):
 16. ISO Year & Week = Week Date of the start of each week
 17. ISO Week Index = Week Index using ISO calendar
 18. ISO Week Based Quarter and Year = Example: 20182, YYYYQ
+![Date Table View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Date%20Table%20View.png)
 
 Here is the DAX used to make this table:
 ```
@@ -150,6 +154,9 @@ For Column ISO Week Based Quarter and Year:
 ```
 ISO Week Based Quarter and Year = 'Date'[ISO Year] & 'Date'[ISO Week Based Quarter]
 ```
+## Data Model
+After Importing all these tables and adding the custom columns, we must design the model which we will do by using star schema, Here is how our model looks like
+![Data Model View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Model%20Diagram.png)
 ## Measures 
 Here are the Measures that we are going to use in this Report:
 ### Base Measures:
@@ -278,7 +285,7 @@ CALCULATE(
 Now lets incorporate these measures into Visuals!
 ## Visuals
 ### Home Page
-- This Includes the Main Filters which also propogate to all other pages along with the option to go to additional filter with a button for reseting them as well.
+- This Includes the Main Filters which also propogate to all other pages along with the option to go to additional filter with a button for reseting them as well
 - On the left side there are buttons with icon pertaining to visual in other pages, you can use them to go to navigate
 - To switch to other pages you must come back to home screen and then navigate to them, or else you can just use the page navigator on the bottom
 ![Main Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/fd813300623302d88e89147f0d3279e9bd198f85/Screenshots/Main%20Page.png)
@@ -286,7 +293,21 @@ Now lets incorporate these measures into Visuals!
 - This page gives a eagle eye view of the operations of the Call Center, stakeholders can navigate to it quickly get an idea as to how things are progressing
 ![Oerview Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/fd813300623302d88e89147f0d3279e9bd198f85/Screenshots/Overview%20Page.png)
 ### Employees Page
-- This page contains
+- This page contains all the information related to the Employees working in the call center
+!{Employees Page}(https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/fd813300623302d88e89147f0d3279e9bd198f85/Screenshots/Employees_Page.png)
+### Time Intelligence Page
+- This page has two matrixes, one with Gregorian based time intelligence and the other with ISO standard baed time analysis measure
+- For the ISO based time intelligence, we have to make custom measures for time analysis, you can examine them in ISO Based Time Intelligence measures section
+![Time Intelligence Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Time%20Intelligence%20Page.png)
+### SLA Page
+- This page contains everyting related to complaince, and upholding SLAs
+![SLA Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/SLA%20Page.png)
+### Revenue Page
+- This page includes visuals related to Revenue Generation
+![Revenue Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Revenue%20Page.png)
+### Additional Filters
+- This page contains additional filters that can be used and accessed by a button on the main page
+![Additional Filters](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Additional%20Filters%20Page.png)
 
 
 
