@@ -23,6 +23,7 @@ SLA Compliance = IF(
     'Call Center Data'[WaitTime] <35, "Within SLA", "Outside SLA"
 )
 ```
+
 ![Call Center Data Table View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Call%20Center%20Data%20Table%20View.png)
 
 CallCharges Table(Dimension Table):
@@ -32,6 +33,7 @@ CallCharges Table(Dimension Table):
 4. Call Charges 2019 = Call charges for each type for the year of 2019
 5. Call Charges 2020 = Call charges for each type for the year of 2020
 6. Call Charges 2021 = Call charges for each type for the year of 2021
+
 ![Call Charges Table View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Call%20Charges%20Table%20View.png)
 
 Emoloyees Table(Dimension Table):
@@ -39,6 +41,7 @@ Emoloyees Table(Dimension Table):
 2. EmoloyeeName = Name of the Employee
 3. Site = Site at which the Employee works
 4. ManagerName = Name of the Manager
+
 ![Employee Table View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Employees%20Table%20View.png)
 
 Date Table(Date Dimension):
@@ -60,6 +63,7 @@ Date Table(Date Dimension):
 16. ISO Year & Week = Week Date of the start of each week
 17. ISO Week Index = Week Index using ISO calendar
 18. ISO Week Based Quarter and Year = Example: 20182, YYYYQ
+
 ![Date Table View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Date%20Table%20View.png)
 
 Here is the DAX used to make this table:
@@ -156,6 +160,7 @@ ISO Week Based Quarter and Year = 'Date'[ISO Year] & 'Date'[ISO Week Based Quart
 ```
 ## Data Model
 After Importing all these tables and adding the custom columns, we must design the model which we will do by using star schema, Here is how our model looks like
+
 ![Data Model View](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Model%20Diagram.png)
 ## Measures 
 Here are the Measures that we are going to use in this Report:
@@ -288,27 +293,35 @@ Now lets incorporate these measures into Visuals!
 - This Includes the Main Filters which also propogate to all other pages along with the option to go to additional filter with a button for reseting them as well
 - On the left side there are buttons with icon pertaining to visual in other pages, you can use them to go to navigate
 - To switch to other pages you must come back to home screen and then navigate to them, or else you can just use the page navigator on the bottom
+
 ![Main Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/fd813300623302d88e89147f0d3279e9bd198f85/Screenshots/Main%20Page.png)
 ### Overview Page
 - This page gives a eagle eye view of the operations of the Call Center, stakeholders can navigate to it quickly get an idea as to how things are progressing
+
 ![Oerview Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/fd813300623302d88e89147f0d3279e9bd198f85/Screenshots/Overview%20Page.png)
 ### Employees Page
 - This page contains all the information related to the Employees working in the call center
+
 !{Employees Page}(https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/fd813300623302d88e89147f0d3279e9bd198f85/Screenshots/Employees_Page.png)
 ### Time Intelligence Page
 - This page has two matrixes, one with Gregorian based time intelligence and the other with ISO standard baed time analysis measure
 - For the ISO based time intelligence, we have to make custom measures for time analysis, you can examine them in ISO Based Time Intelligence measures section
+
 ![Time Intelligence Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Time%20Intelligence%20Page.png)
 ### SLA Page
 - This page contains everyting related to complaince, and upholding SLAs
+
 ![SLA Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/SLA%20Page.png)
 ### Revenue Page
 - This page includes visuals related to Revenue Generation
+
 ![Revenue Page](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Revenue%20Page.png)
 ### Additional Filters
 - This page contains additional filters that can be used and accessed by a button on the main page
+
 ![Additional Filters](https://github.com/tirthvyas95/EDNA_Call_Center_Data_Report/blob/12aafbe2f3782136ef1f20fc35b9461e7e2071e9/Screenshots/Additional%20Filters%20Page.png)
-
-
-
+### References
+1. Microsoft Learn, Microsoft Learn's Data Analyst Career Path. Retrieved March 1, 2026, from https://learn.microsoft.com/en-us/training/career-paths/data-analyst
+2. Enterprise DNA, Data Analytics Challenges by Enterprise DNA. Retrieved March 1, 2026, from https://enterprisedna.co/challenges
+3. SQLBI, SQLBI's Website, Retrieved March 1, 2026. from https://www.sqlbi.com/
 
